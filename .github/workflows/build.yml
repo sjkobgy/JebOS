@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   sync-and-build:
     name: Sync main to build branch and Build
@@ -16,25 +19,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Set up Git
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "github-actions@github.com"
-
-      - name: Create or switch to build branch
-        run: |
-          git checkout -b build || git checkout build
-
-      - name: Pull changes from build branch
-        run: |
-          git fetch origin build
-          git reset --hard origin/build
-
-      - name: Pull changes from main branch
-        run: |
-          git fetch origin main
-          git reset --hard origin/main
 
       - name: Install Dependencies
         run: |
@@ -45,16 +29,15 @@ jobs:
         run: |
           make clean || true
 
-      - name: Build JebOS in build branch
+      - name: Build JebOS
         run: |
           make all
 
-      - name: Commit and push build artifacts to build branch
+      - name: Commit and push build artifacts
         run: |
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git checkout -B build
           git add .
-          git commit -m "Build update from main" || echo "No changes to commit"
-          
-          git fetch origin build
-          git pull origin build --rebase || git merge --strategy=recursive -X ours origin/build
-
-          git push origin build
+          git commit -m "Build update from main"
+          git push -f origin build
