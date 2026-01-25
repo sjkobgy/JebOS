@@ -34,7 +34,7 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt update
-          sudo apt install -y gcc-arm-none-eabi binutils xorriso build-essential
+          sudo apt install -y gcc-arm-none-eabi binutils xorriso build-essential mtools
 
       - name: Clean build directory
         run: |
