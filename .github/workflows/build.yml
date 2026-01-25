@@ -43,7 +43,7 @@ jobs:
 
       - name: Clean build directory
         run: |
-          make clean || true  # If "make clean" doesn't exist, we ignore it
+          make clean || true
 
       - name: Build JebOS in build branch
         run: |
@@ -53,4 +53,6 @@ jobs:
         run: |
           git add .
           git commit -m "Build update from main"
+          git fetch origin build
+          git pull origin build --rebase
           git push origin build
