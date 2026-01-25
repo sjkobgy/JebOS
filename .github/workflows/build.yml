@@ -1,0 +1,46 @@
+name: Build Jeb OS
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  sync-and-build:
+    name: Sync main to build branch and Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Create or switch to build branch
+        run: |
+          git checkout -b build || git checkout build
+
+      - name: Pull changes from main branch
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Clean build directory
+        run: |
+          make clean || true  # If "make clean" doesn't exist, we ignore it
+
+      - name: Build JebOS in build branch
+        run: |
+          make all
+
+      - name: Commit and push build artifacts to build branch
+        run: |
+          git add .
+          git commit -m "Build update from main"
+          git push origin build
