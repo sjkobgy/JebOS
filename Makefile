@@ -2,10 +2,10 @@ CC = gcc
 AS = as
 LD = ld
 
-CFLAGS = -m64 -c -std=gnu99 -ffreestanding -O2 -Wall -Wextra \
+CFLAGS = -m64 -c -std=gnu99 -ffreestanding -O2 -Wall -Wextra -Os \
          -mcmodel=large -mno-red-zone -mno-mmx -mno-sse -mno-sse2
 
-LDFLAGS = -n -T linker.ld --no-warn-rwx-segments
+LDFLAGS = -n -T linker.ld --no-warn-rwx-segments --gc-sections
 
 BIN = jeeb.bin
 ISO = jeb-os.iso
