@@ -52,7 +52,9 @@ jobs:
       - name: Commit and push build artifacts to build branch
         run: |
           git add .
-          git commit -m "Build update from main"
+          git commit -m "Build update from main" || echo "No changes to commit"
+          
           git fetch origin build
-          git pull origin build --rebase
+          git pull origin build --rebase || git merge --strategy=recursive -X ours origin/build
+
           git push origin build
